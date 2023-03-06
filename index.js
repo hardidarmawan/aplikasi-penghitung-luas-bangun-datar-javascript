@@ -7,7 +7,7 @@
 // Menggunakan library readline-sync untuk mengambil input dari User
 const readline = require('readline-sync');
 
-// Fungsi untuk rumus menghitung luas bangun datar persegi
+// Fungsi untuk rumus menghitung luas bangun datar persegi panjang
 const luasPersegi = (p, l) => {
 
 	/**
@@ -66,7 +66,7 @@ const hitungLuasApp = () => {
 	line();
 
 	// Menu untuk pilihan
-	const Menu = ['Hitung Luas Bangun Datar Persegi', 'Hitung Luas Bangun Datar Lingkaran', 'Hitung Luas Bangun Datar Segitiga', 'Hitung Luas Jajar Genjang', 'Keluar'];
+	const Menu = ['Hitung Luas Bangun Datar Persegi Panjang', 'Hitung Luas Bangun Datar Lingkaran', 'Hitung Luas Bangun Datar Segitiga', 'Hitung Luas Jajar Genjang', 'Keluar'];
 
 	let number = 1;
 
@@ -85,7 +85,7 @@ const hitungLuasApp = () => {
 	// Proses berdasarkan menu yang dipilih
 	if (pilihan === 1) {
 
-		// Proses menghitung luas bangun datar persegi
+		// Proses menghitung luas bangun datar persegi panjang
 		line();
 		console.log(` >> ${Menu[0]} <<`);
 		line();
@@ -93,9 +93,9 @@ const hitungLuasApp = () => {
 		const p = readline.question(' >  Panjang = ');
 		const l = readline.question(' >  Lebar   = ');
 
-		const hasilLP = luasPersegi(p, l);
+		const hasilLPP = luasPersegi(p, l);
 
-		console.log(`\n -  Luas Persegi = ${hasilLP}`);
+		console.log(`\n -  Luas Persegi Panjang = ${hasilLPP}`);
 
 	} else if (pilihan === 2) {
 
