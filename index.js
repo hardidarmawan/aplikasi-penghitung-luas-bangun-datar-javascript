@@ -8,7 +8,7 @@
 const readline = require('readline-sync');
 
 // Fungsi untuk rumus menghitung luas bangun datar persegi panjang
-const luasPersegi = (p, l) => {
+const luasPersegiPanjang = (p, l) => {
 
 	/**
 	 * p = Panjang
@@ -48,6 +48,16 @@ const luasJajarGenjang = (a, t) => {
 	return a * t;
 }
 
+// Fungsi untuk rumus menghitung luas bangun datar Persegi
+const luasPersegi = (s) => {
+
+	/**
+	 * s = Sisi
+	 */
+
+	return s * s;
+}
+
 // Fungsi untuk membuat garis pembatas
 const line = () => {
 	console.log('--------------------------------------------');
@@ -66,7 +76,7 @@ const hitungLuasApp = () => {
 	line();
 
 	// Menu untuk pilihan
-	const Menu = ['Hitung Luas Bangun Datar Persegi Panjang', 'Hitung Luas Bangun Datar Lingkaran', 'Hitung Luas Bangun Datar Segitiga', 'Hitung Luas Jajar Genjang', 'Keluar'];
+	const Menu = ['Hitung Luas Bangun Datar Persegi Panjang', 'Hitung Luas Bangun Datar Lingkaran', 'Hitung Luas Bangun Datar Segitiga', 'Hitung Luas Jajar Genjang', 'Hitung Luas Persegi', 'Keluar'];
 
 	let number = 1;
 
@@ -93,7 +103,7 @@ const hitungLuasApp = () => {
 		const p = readline.question(' >  Panjang = ');
 		const l = readline.question(' >  Lebar   = ');
 
-		const hasilLPP = luasPersegi(p, l);
+		const hasilLPP = luasPersegiPanjang(p, l);
 
 		console.log(`\n -  Luas Persegi Panjang = ${hasilLPP}`);
 
@@ -139,6 +149,19 @@ const hitungLuasApp = () => {
 		console.log(`\n -  Luas Jajar Genjang = ${hasilLJG}`);
 
 	} else if (pilihan === 5) {
+
+		// Proses menghitung luas bangun datar jajar genjang
+		line();
+		console.log(` >> ${Menu[4]} <<`);
+		line();
+
+		const s = readline.question(' >  Sisi   = ');
+
+		const hasilLP = luasPersegi(s);
+
+		console.log(`\n -  Luas Persegi = ${hasilLP}`);
+
+	} else if (pilihan === 6) {
 
 		sayThanks();
 
