@@ -76,7 +76,7 @@ const hitungLuasApp = () => {
 	line();
 
 	// Menu untuk pilihan
-	const Menu = ['Hitung Luas Bangun Datar Persegi Panjang', 'Hitung Luas Bangun Datar Lingkaran', 'Hitung Luas Bangun Datar Segitiga', 'Hitung Luas Jajar Genjang', 'Hitung Luas Persegi', 'Keluar'];
+	const Menu = ['Hitung Luas Bangun Datar Persegi Panjang', 'Hitung Luas Bangun Datar Lingkaran', 'Hitung Luas Bangun Datar Segitiga', 'Hitung Luas Bangun Datar Jajar Genjang', 'Hitung Luas Bangun Datar Persegi', 'Keluar'];
 
 	let number = 1;
 
