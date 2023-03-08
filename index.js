@@ -7,6 +7,16 @@
 // Menggunakan library readline-sync untuk mengambil input dari User
 const readline = require('readline-sync');
 
+// Fungsi untuk rumus menghitung luas bangun datar Persegi
+const luasPersegi = (s) => {
+
+	/**
+	 * s = Sisi
+	 */
+
+	return s * s;
+}
+
 // Fungsi untuk rumus menghitung luas bangun datar persegi panjang
 const luasPersegiPanjang = (p, l) => {
 
@@ -16,25 +26,6 @@ const luasPersegiPanjang = (p, l) => {
 	 */
 
 	return p * l;
-}
-
-// Fungsi untuk rumus menghitung luas bangun datar lingkaran
-const luasLingkaran = (r) => {
-
-	// r = Jari-jari lingkaran
-
-	return 3.14 * r * r;
-}
-
-// Fungsi untuk rumus menghitung luas bangun datar segitiga
-const luasSegitiga = (a, t) => {
-
-	/**
-	 * a = Alas
-	 * t = Tinggi
-	 */
-
-	return 0.5 * a * t;
 }
 
 // Fungsi untuk rumus menghitung luas bangun datar Jajar Genjang
@@ -48,14 +39,23 @@ const luasJajarGenjang = (a, t) => {
 	return a * t;
 }
 
-// Fungsi untuk rumus menghitung luas bangun datar Persegi
-const luasPersegi = (s) => {
+// Fungsi untuk rumus menghitung luas bangun datar segitiga
+const luasSegitiga = (a, t) => {
 
 	/**
-	 * s = Sisi
+	 * a = Alas
+	 * t = Tinggi
 	 */
 
-	return s * s;
+	return 0.5 * a * t;
+}
+
+// Fungsi untuk rumus menghitung luas bangun datar lingkaran
+const luasLingkaran = (r) => {
+
+	// r = Jari-jari lingkaran
+
+	return 3.14 * r * r;
 }
 
 // Fungsi untuk membuat garis pembatas
@@ -76,7 +76,7 @@ const hitungLuasApp = () => {
 	line();
 
 	// Menu untuk pilihan
-	const Menu = ['Hitung Luas Bangun Datar Persegi Panjang', 'Hitung Luas Bangun Datar Lingkaran', 'Hitung Luas Bangun Datar Segitiga', 'Hitung Luas Bangun Datar Jajar Genjang', 'Hitung Luas Bangun Datar Persegi', 'Keluar'];
+	const Menu = ['Hitung Luas Bangun Datar Persegi', 'Hitung Luas Bangun Datar Persegi Panjang', 'Hitung Luas Bangun Datar Jajar Genjang', 'Hitung Luas Bangun Datar Segitiga', 'Hitung Luas Bangun Datar Lingkaran', 'Keluar'];
 
 	let number = 1;
 
@@ -95,9 +95,22 @@ const hitungLuasApp = () => {
 	// Proses berdasarkan menu yang dipilih
 	if (pilihan === 1) {
 
-		// Proses menghitung luas bangun datar persegi panjang
+		// Proses menghitung luas bangun datar persegi
 		line();
 		console.log(` >> ${Menu[0]} <<`);
+		line();
+
+		const s = readline.question(' >  Sisi   = ');
+
+		const hasilLP = luasPersegi(s);
+
+		console.log(`\n -  Luas Persegi = ${hasilLP}`);
+
+	} else if (pilihan === 2) {
+
+		// Proses menghitung luas bangun datar persegi panjang
+		line();
+		console.log(` >> ${Menu[1]} <<`);
 		line();
 
 		const p = readline.question(' >  Panjang = ');
@@ -107,38 +120,11 @@ const hitungLuasApp = () => {
 
 		console.log(`\n -  Luas Persegi Panjang = ${hasilLPP}`);
 
-	} else if (pilihan === 2) {
-
-		// Proses menghitung luas bangun datar lingkaran
-		line();
-		console.log(` >> ${Menu[1]} <<`);
-		line();
-
-		const r = readline.question(' >  Jari - Jari Lingkaran (r) = ');
-
-		const hasilLL = luasLingkaran(r).toFixed(2);
-
-		console.log(`\n -  Luas Lingkaran = ${hasilLL}`);
-
 	} else if (pilihan === 3) {
-
-		// Proses menghitung luas bangun datar segitiga
-		line();
-		console.log(` >> ${Menu[2]} <<`);
-		line();
-
-		const a = readline.question(' >  Alas   = ');
-		const t = readline.question(' >  Tinggi = ');
-
-		const hasilLS = luasSegitiga(a, t);
-
-		console.log(`\n -  Luas Segitiga = ${hasilLS}`);
-
-	} else if (pilihan === 4) {
 
 		// Proses menghitung luas bangun datar jajar genjang
 		line();
-		console.log(` >> ${Menu[3]} <<`);
+		console.log(` >> ${Menu[2]} <<`);
 		line();
 
 		const a = readline.question(' >  Alas   = ');
@@ -148,18 +134,32 @@ const hitungLuasApp = () => {
 
 		console.log(`\n -  Luas Jajar Genjang = ${hasilLJG}`);
 
+	} else if (pilihan === 4) {
+
+		// Proses menghitung luas bangun datar segitiga
+		line();
+		console.log(` >> ${Menu[3]} <<`);
+		line();
+
+		const a = readline.question(' >  Alas   = ');
+		const t = readline.question(' >  Tinggi = ');
+
+		const hasilLS = luasSegitiga(a, t);
+
+		console.log(`\n -  Luas Segitiga = ${hasilLS}`);
+
 	} else if (pilihan === 5) {
 
-		// Proses menghitung luas bangun datar jajar genjang
+		// Proses menghitung luas bangun datar lingkaran
 		line();
 		console.log(` >> ${Menu[4]} <<`);
 		line();
 
-		const s = readline.question(' >  Sisi   = ');
+		const r = readline.question(' >  Jari - Jari Lingkaran (r) = ');
 
-		const hasilLP = luasPersegi(s);
+		const hasilLL = luasLingkaran(r).toFixed(2);
 
-		console.log(`\n -  Luas Persegi = ${hasilLP}`);
+		console.log(`\n -  Luas Lingkaran = ${hasilLL}`);
 
 	} else if (pilihan === 6) {
 
